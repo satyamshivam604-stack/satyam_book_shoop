@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create account | Leaf & Ledger</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js?v=inr" defer></script>
+  </head>
+  <body data-page="signup">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Leaf & Ledger home">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span class="brand-text">
+          <strong>Leaf & Ledger</strong>
+          <small>Independent book shop</small>
+        </span>
+      </a>
+      <nav class="main-nav auth-nav" aria-label="Account navigation">
+        <a href="index.html">Shop</a>
+        <a href="login.html">Sign in</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-button" type="button" data-open-cart aria-controls="cartDrawer">
+          <span>Cart</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="auth-shell">
+      <section class="auth-visual" aria-label="Leaf and Ledger shop preview">
+        <img src="assets/bookshop-hero.png" alt="Illustrated book shop shelves">
+      </section>
+
+      <section class="auth-panel" aria-labelledby="signupTitle">
+        <p class="eyebrow">Account</p>
+        <h1 id="signupTitle">Create account</h1>
+        <form class="auth-form" id="signupForm" novalidate>
+          <div class="field">
+            <label for="signupName">Name</label>
+            <input id="signupName" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword" name="password" type="password" autocomplete="new-password" minlength="6" required>
+          </div>
+          <div class="field">
+            <label for="signupConfirm">Confirm password</label>
+            <input id="signupConfirm" name="confirm" type="password" autocomplete="new-password" minlength="6" required>
+          </div>
+          <label class="check-row">
+            <input id="signupAgree" type="checkbox" name="agree" required>
+            <span>Email me about new arrivals and store events</span>
+          </label>
+          <p class="form-message" data-auth-message role="alert"></p>
+          <button class="primary-action auth-submit" type="submit">Create account</button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p>
+      </section>
+    </main>
+
+    <div class="cart-overlay" data-cart-overlay hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Your bag</p>
+          <h2 id="cartTitle">Cart</h2>
+        </div>
+        <button class="close-button" type="button" data-close-cart aria-label="Close cart">x</button>
+      </div>
+      <div class="cart-lines" data-cart-lines></div>
+      <div class="cart-footer">
+        <div class="subtotal-row">
+          <span>Subtotal</span>
+          <strong data-cart-subtotal>$0.00</strong>
+        </div>
+        <button class="primary-action checkout-button" type="button">Checkout</button>
+      </div>
+    </aside>
+  </body>
+</html>

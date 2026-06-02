@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leaf & Ledger Book Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js?v=inr" defer></script>
+  </head>
+  <body data-page="shop">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Leaf & Ledger home">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span class="brand-text">
+          <strong>Leaf & Ledger</strong>
+          <small>Independent book shop</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#catalog">Shop</a>
+        <a href="#staff-picks">Staff picks</a>
+        <a href="#events">Events</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="account-link" href="login.html" data-auth-label>Sign in</a>
+        <button class="cart-button" type="button" data-open-cart aria-controls="cartDrawer">
+          <span>Cart</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-band" aria-labelledby="heroTitle">
+        <img src="assets/bookshop-hero.png" alt="Illustrated book shop shelves and display table">
+        <div class="hero-copy">
+          <p class="eyebrow">Open shelves, sharper picks</p>
+          <h1 id="heroTitle">Leaf & Ledger</h1>
+          <p>Browse new fiction, science, travel, cooking, and staff favorites from a neighborhood shop built for curious readers.</p>
+          <a class="primary-link" href="#catalog">Browse books</a>
+        </div>
+      </section>
+
+      <section class="shop-controls" aria-label="Catalog controls">
+        <div class="search-field">
+          <label for="bookSearch">Search the shelves</label>
+          <input id="bookSearch" type="search" placeholder="Title, author, or category" autocomplete="off" data-search>
+        </div>
+
+        <div class="control-group">
+          <span class="control-label">Category</span>
+          <div class="segmented-control" data-categories role="tablist" aria-label="Book categories"></div>
+        </div>
+
+        <div class="control-group compact-control">
+          <label for="sortBooks" class="control-label">Sort</label>
+          <select id="sortBooks" data-sort>
+            <option value="featured">Featured</option>
+            <option value="price-low">Price low to high</option>
+            <option value="price-high">Price high to low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </div>
+
+        <button class="secondary-action reset-control" type="button" data-reset-filters>Reset</button>
+      </section>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalogTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Catalog</p>
+            <h2 id="catalogTitle">Fresh shelves</h2>
+          </div>
+          <p class="result-count" data-result-count>8 books</p>
+        </div>
+        <div class="product-grid" data-products></div>
+      </section>
+
+      <section class="staff-section" id="staff-picks" aria-labelledby="staffTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Staff picks</p>
+            <h2 id="staffTitle">Booksellers are reading</h2>
+          </div>
+        </div>
+        <div class="pick-grid">
+          <article class="pick-card">
+            <img src="assets/glass-orchard.png" alt="The Glass Orchard book cover">
+            <div>
+              <h3>The Glass Orchard</h3>
+              <p>A luminous fantasy pick with a tense family estate, strange fruit, and a satisfying final turn.</p>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="assets/wildflower-physics.png" alt="Wildflower Physics book cover">
+            <div>
+              <h3>Wildflower Physics</h3>
+              <p>Plainspoken science writing with field notes, diagrams, and a quiet affection for the natural world.</p>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="assets/city-of-margins.png" alt="City of Margins book cover">
+            <div>
+              <h3>City of Margins</h3>
+              <p>A layered city novel for readers who like sharp dialogue, train rides, and unresolved loyalties.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="events-band" id="events" aria-labelledby="eventsTitle">
+        <div>
+          <p class="eyebrow">In store</p>
+          <h2 id="eventsTitle">June reading table</h2>
+        </div>
+        <div class="event-list">
+          <article>
+            <time datetime="2026-06-08">Jun 8</time>
+            <h3>Fiction night</h3>
+            <p>New literary releases with short readings from local writers.</p>
+          </article>
+          <article>
+            <time datetime="2026-06-14">Jun 14</time>
+            <h3>Cookbook swap</h3>
+            <p>Bring a favorite recipe note and trade kitchen stories.</p>
+          </article>
+          <article>
+            <time datetime="2026-06-21">Jun 21</time>
+            <h3>Science shelf talk</h3>
+            <p>Booksellers pair accessible science titles with field guides.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="cart-overlay" data-cart-overlay hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Your bag</p>
+          <h2 id="cartTitle">Cart</h2>
+        </div>
+        <button class="close-button" type="button" data-close-cart aria-label="Close cart">x</button>
+      </div>
+      <div class="cart-lines" data-cart-lines></div>
+      <div class="cart-footer">
+        <div class="subtotal-row">
+          <span>Subtotal</span>
+          <strong data-cart-subtotal>$0.00</strong>
+        </div>
+        <button class="primary-action checkout-button" type="button">Checkout</button>
+      </div>
+    </aside>
+  </body>
+</html>
